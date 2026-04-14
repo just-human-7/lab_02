@@ -1,15 +1,15 @@
 #include <iostream>
 #include <vector>
 
-// Умножение большого числа на обычное число
+// умножаем
 void multiply(std::vector<int>& num, int x) {
     int carry = 0;
 
     for (int i = 0; i < num.size(); i++) {
         int cur = num[i] * x + carry;
 
-        num[i] = cur % 10;   // записываем цифру
-        carry = cur / 10;    // перенос
+        num[i] = cur % 10;
+        carry = cur / 10;
     }
 
     // добавляем оставшиеся цифры
@@ -19,7 +19,7 @@ void multiply(std::vector<int>& num, int x) {
     }
 }
 
-// Сложение двух больших чисел
+// сложение
 std::vector<int> add(std::vector<int> a, std::vector<int> b) {
     std::vector<int> res;
     int carry = 0;
@@ -42,7 +42,7 @@ std::vector<int> add(std::vector<int> a, std::vector<int> b) {
 }
 
 
-// Вычитание (a > b)
+// вычитание (a > b)
 std::vector<int> subtract(std::vector<int> a, std::vector<int> b) {
     std::vector<int> res;
     int borrow = 0;
@@ -69,7 +69,7 @@ std::vector<int> subtract(std::vector<int> a, std::vector<int> b) {
     return res;
 }
 
-// Вывод числа
+// вывод
 void print(std::vector<int> num) {
     for (int i = num.size() - 1; i >= 0; i--) {
         std::cout << num[i];
@@ -78,7 +78,7 @@ void print(std::vector<int> num) {
 }
 
 
-// Факториал
+// факториал
 std::vector<int> factorial(int n) {
     std::vector<int> res = {1};
 
@@ -102,7 +102,7 @@ std::vector<int> power2(int n) {
 }
 
 
-// Фибоначчи
+// фибоначчи
 std::vector<int> fib(int n) {
     std::vector<int> a = {0};
     std::vector<int> b = {1};
