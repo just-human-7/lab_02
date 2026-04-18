@@ -1,0 +1,8 @@
+[
+{
+  "directory": "D:/vsc_projects/lab_02/out/build/idk",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -g -o CMakeFiles\\lab_02.dir\\main.cpp.obj -c D:\\vsc_projects\\lab_02\\main.cpp",
+  "file": "D:/vsc_projects/lab_02/main.cpp",
+  "output": "D:/vsc_projects/lab_02/out/build/idk/CMakeFiles/lab_02.dir/main.cpp.obj"
+}
+]

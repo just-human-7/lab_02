@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-// умножаем
+// умножение для использования потом
 void multiply(std::vector<int>& num, int x) {
     int carry = 0;
 
@@ -19,7 +19,29 @@ void multiply(std::vector<int>& num, int x) {
     }
 }
 
-// сложение
+// 1)факториал
+std::vector<int> factorial(int n) {
+    std::vector<int> res = {1};
+
+    for (int i = 2; i <= n; i++) {
+        multiply(res, i);
+    }
+
+    return res;
+}
+
+// 2)2^input
+std::vector<int> power2(int n) {
+    std::vector<int> res = {1};
+
+    for (int i = 0; i < n; i++) {
+        multiply(res, 2);
+    }
+
+    return res;
+}
+
+// 3)cложение
 std::vector<int> add(std::vector<int> a, std::vector<int> b) {
     std::vector<int> res;
     int carry = 0;
@@ -42,7 +64,7 @@ std::vector<int> add(std::vector<int> a, std::vector<int> b) {
 }
 
 
-// вычитание (a > b)
+// 4)вычитание (a > b)
 std::vector<int> subtract(std::vector<int> a, std::vector<int> b) {
     std::vector<int> res;
     int borrow = 0;
@@ -65,42 +87,8 @@ std::vector<int> subtract(std::vector<int> a, std::vector<int> b) {
     while (res.size() > 1 && res.back() == 0) {
         res.pop_back();
     }
-
     return res;
 }
-
-// вывод
-void print(std::vector<int> num) {
-    for (int i = num.size() - 1; i >= 0; i--) {
-        std::cout << num[i];
-    }
-    std::cout << std::endl;
-}
-
-
-// факториал
-std::vector<int> factorial(int n) {
-    std::vector<int> res = {1};
-
-    for (int i = 2; i <= n; i++) {
-        multiply(res, i);
-    }
-
-    return res;
-}
-
-
-// 2^n
-std::vector<int> power2(int n) {
-    std::vector<int> res = {1};
-
-    for (int i = 0; i < n; i++) {
-        multiply(res, 2);
-    }
-
-    return res;
-}
-
 
 // фибоначчи
 std::vector<int> fib(int n) {
@@ -116,6 +104,14 @@ std::vector<int> fib(int n) {
     }
 
     return b;
+}
+
+// принт
+void print(std::vector<int> num) {
+    for (int i = num.size() - 1; i >= 0; i--) {
+        std::cout << num[i];
+    }
+    std::cout << std::endl;
 }
 
 int main() {
